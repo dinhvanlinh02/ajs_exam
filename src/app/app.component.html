@@ -1,34 +1,86 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12 pt-5 ">
-      <mat-tab-group mat-stretch-tabs="true" mat-align-tabs="center">
-        <mat-tab label="{{item.Name}}" *ngFor="let item of data">
-          <div class="d-flex align-items-center justify-content-center mt-5">
-            <h1>Employees Info</h1>
+<div class="container-fluid">
+  <div class="row flex-nowrap">
+    <div style="background-color: #f8f9fa;" class="col-auto col-md-3 col-xl-2 px-0">
+      <div class="d-flex flex-column align-items-center align-items-sm-start pt-2 text-white min-vh-100 w-100">
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100" id="menu">
+          <li class="w-100">
+            <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+              <i class="fa-solid fa-chevron-down text-color- ms-2"></i>
+              <span class="ms-3 d-none d-sm-inline text-color-">Favorites</span>
+            </a>
+            <ul class="collapse show nav flex-column w-100" id="submenu1" data-bs-parent="#menu">
+              <li class="w-100">
+                <a href="#" class="nav-link px-0 text-color- text-color- nav-link-">
+                  <span class="ms-5">Inbox</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link px-0 text-color- nav-link-">
+                  <span class="ms-5">Sent Items</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="w-100">
+            <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+              <i class="fa-solid fa-chevron-down text-color- ms-2"></i>
+              <span class="ms-3 d-none d-sm-inline text-color-">John</span> </a>
+            <ul class="collapse show nav flex-column" id="submenu3" data-bs-parent="#menu">
+              <li class="w-100">
+                <a href="#" class="nav-link px-0 text-color- text-color- nav-link-">
+                  <span class="ms-5">Inbox</span>
+                </a>
+              </li>
+              <li class="w-100">
+                <a href="#" class="nav-link px-0 text-color- text-color- nav-link-">
+                  <span class="ms-5">Drafts</span>
+                </a>
+              </li>
+              <li class="w-100">
+                <a href="#" class="nav-link px-0 text-color- text-color- nav-link-">
+                  <span class="ms-5">Deleted Items</span>
+                </a>
+              </li>
+              <li class="w-100">
+                <a href="#" class="nav-link px-0 text-color- text-color- nav-link-">
+                  <span class="ms-5">Sent Items</span>
+                </a>
+              </li>
+              <li class="w-100">
+                <a href="#" class="nav-link px-0 text-color- text-color- nav-link-">
+                  <span class="ms-5">Outbox</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div style="padding-left: 0; padding-right: 0;" class="col">
+      <div *ngFor="let item of data">
+        <div style="display: flex; align-items: center; border: 1px solid #ccc;" class="p-3">
+          <div>
+            <img style="width: 50px; height: 50px; border-radius: 100px; margin-right: 20px;" src="{{item.Img}}" alt="">
           </div>
-
-          <div class="col-md-12" *ngFor="let empl of item.Employees">
-            <div style="display: flex; align-items: center;">
-              <div>
-                <img style="width: 50px; height: 50px; border-radius: 100px;" src="{{empl.Img}}" alt="">
-              </div>
-              <div>
-                <div class="col-12">
-                  <span style="font-weight: 500;">
-                    {{empl.Name}}
-                  </span>
-                </div>
-                <div class="col-12">
-                  <span>
-                    {{empl.Position}}
-                  </span>
-                </div>
+          <div>
+            <div class="col-12">
+              <div style="font-weight: 500;">
+                {{item.Name}}
               </div>
             </div>
-            <hr>
+            <div class="col-12">
+              <div style="color: #b0b5ba; padding: 6px 0;">
+                {{item.Position}}
+              </div>
+            </div>
+            <div class="col-12">
+              <div>
+                {{item.Hello}}
+              </div>
+            </div>
           </div>
-        </mat-tab>
-      </mat-tab-group>
+        </div>
+      </div>
     </div>
   </div>
 </div>
